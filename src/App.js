@@ -1,22 +1,12 @@
+import React from "react";
+import TodoItem from "./TodoItem";
+import todosData from "./todosData";
+
 function App() {
-  return (
-    <div>
-      <ul>
-        <li>
-          <span> Build a portfolio</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span> Learn react</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span> Find a job</span>
-          <input type="checkbox" />
-        </li>
-      </ul>
-    </div>
-  );
+  const todosComponent = todosData.map((item) => (
+    <TodoItem key={item.id} data={item} />
+  ));
+  return <div className="todo-list">{todosComponent}</div>;
 }
 
 export default App;
